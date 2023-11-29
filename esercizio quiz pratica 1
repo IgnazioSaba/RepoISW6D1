@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char scelta;
+char risposta;
+char nome[20];
+int conta = 0;
+int esatta = 0;
+
+void iniziaPartita(){
+  printf("ok \n");
+  printf("inserisci il tuo nome \n");
+  scanf("%s",nome);
+  printf("Ciao %s \n ORA COMINCIA IL GIOCO!!!\n",nome);
+
+  
+do  { 
+  printf("di che colore era il cavallo bianco di Napoleone \n");
+  printf(" a) bianco \n b) nero \n c) marrone \n" );
+  scanf(" %c", &risposta);   
+  printf("hai scelto %c ", risposta);
+    if(risposta == 'a'){
+    printf("risposta corretta \n");
+    esatta++;
+    conta++;  
+     }else if (risposta == 'b' || risposta == 'c'){
+    printf("risposta errata \n");
+    conta++;
+     }  
+  
+  printf("seconda domanda \n");
+  printf("di che colore era il cavallo bianco di Napoleone \n");
+  printf(" a) bianco \n b) nero \n c) marrone \n" );
+  scanf(" %c", &risposta);
+    if(risposta == 'a'){
+    printf("risposta corretta \n");
+    esatta++;
+    conta++;
+     }else if(risposta == 'b' || risposta == 'c'){
+    printf("risposta errata \n");
+    conta++;
+     }
+  
+  printf("terza domanda \n");
+  printf("di che colore era il cavallo bianco di Napoleone \n");
+  printf(" a) bianco \n b) nero \n c) marrone \n" );
+  scanf(" %c", &risposta);
+    if(risposta == 'a'){
+    printf("risposta corretta \n");
+    esatta++;
+    conta++;
+     }else if (risposta == 'b' || risposta == 'c'){
+    printf("risposta errata \n");
+    conta++;
+     }  
+  } while(conta<3);
+  printf("IL GIOCO E' FINITO \n");
+  printf("%s", nome);
+  printf(" hai risposto correttamente a %d domande su 3 \n", esatta);
+}
+
+int main() {
+  
+  printf("Ciao!!! Benvenuto nel nuovo gioco a quiz \n se vuoi cominciare una nuova partita digita (A) se vuoi uscire dal gioco digita (B) \n");
+  scanf("%c", &scelta);
+  if(scelta== 'A'){
+   iniziaPartita();
+
+  }
+  else if(scelta=='B') 
+  {
+    printf("ok ciao il gioco è finito");
+   }
+  else{
+    printf("hai inserito un valore non valido \n ");
+  }
+  return 0;
+}
